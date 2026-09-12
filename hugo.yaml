@@ -1,0 +1,39 @@
+baseURL: https://circlechang.github.io/nangang-fresh-market/
+languageCode: zh-hant
+defaultContentLanguage: zh-hant
+title: 南港新鮮市
+enableRobotsTXT: true
+relativeURLs: false
+canonifyURLs: false
+
+params:
+  siteName: 南港新鮮市
+  siteTagline: 把今天的新鮮，帶回南港的日常。
+  draftNotice: true
+  formEndpoint: ""
+  socialImage: /images/social-card.svg
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+permalinks:
+  products: /products/:slug/
+  cases: /cases/:slug/
+  posts: /news/:year/:month/:slug/
+
+menu:
+  main:
+    - name: 我們是誰
+      url: /about/
+      weight: 10
+    - name: 今日鮮選
+      url: /products/
+      weight: 20
+    - name: 合作案例
+      url: /cases/
+      weight: 30
+    - name: 最新消息
+      url: /news/
+      weight: 40

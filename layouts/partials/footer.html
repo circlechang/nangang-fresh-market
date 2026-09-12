@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="footer-brand" href="{{ "/" | relURL }}">{{ .Site.Data.site.brand.name }}</a><p>{{ .Site.Data.site.brand.description }}</p></div>
+    <div><p class="footer-label">來找我們</p><p>{{ .Site.Data.site.contact.address }}<br>{{ .Site.Data.site.contact.hours }}</p></div>
+    <div><p class="footer-label">聯絡</p><p><a href="mailto:{{ .Site.Data.site.contact.email }}">{{ .Site.Data.site.contact.email }}</a><br>{{ .Site.Data.site.contact.phone }}</p></div>
+    <div><p class="footer-label">導航</p><p>{{ range .Site.Menus.main }}<a class="footer-link" href="{{ .URL | relURL }}">{{ .Name }}</a>{{ end }}</p></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>© {{ now.Year }} {{ .Site.Data.site.brand.name }}</span><span>{{ .Site.Data.site.footer.note }}</span></div>
+</footer>

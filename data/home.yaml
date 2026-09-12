@@ -1,0 +1,46 @@
+hero:
+  eyebrow: 今天，從南港的新鮮開始
+  title: 把市場的鮮，
+    帶進每一個日常。
+  description: 南港新鮮市把在地食材、熟悉店家與生活提案整理在一起，讓每一次採買，都更靠近人，也更靠近土地。
+  primaryCta: 看今日鮮選
+  primaryUrl: /products/
+  secondaryCta: 認識南港新鮮市
+  secondaryUrl: /about/
+  visualLabel: 今日鮮選
+  visualTitle: 一籃，剛剛好的新鮮。
+  visualNote: 依季節、產地與南港生活節奏，挑出今天值得帶回家的選擇。
+  visualTags:
+    - 當季
+    - 在地
+    - 少包裝
+
+intro:
+  eyebrow: 我們相信
+  title: 新鮮不只是食材，
+    也是一種鄰里關係。
+  body: 從一個攤位、一家小店，到一張餐桌，南港新鮮市希望讓好的東西被看見，也讓採買不再只是交易，而是每天都能發生的小型相遇。
+
+principles:
+  - number: 01
+    title: 看得見來源
+    body: 把產地、季節與選擇理由說清楚，讓新鮮不是一句口號。
+  - number: 02
+    title: 走得到日常
+    body: 以南港生活圈為半徑，整理真正方便帶走、帶回家、帶進餐桌的選擇。
+  - number: 03
+    title: 一起把市集做好
+    body: 讓店家、居民與合作夥伴，都能在同一個平台上被找到、被理解。
+
+signals:
+  - value: 01
+    label: 今日鮮選
+  - value: 02
+    label: 在地合作
+  - value: 03
+    label: 生活提案
+
+cta:
+  eyebrow: 一起讓南港更好逛
+  title: 你想在南港新鮮市找到什麼？
+  body: 如果你是店家、品牌、社區或只是想推薦一個好地方，歡迎把想法留給我們。

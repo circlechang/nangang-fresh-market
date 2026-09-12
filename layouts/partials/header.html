@@ -1,0 +1,11 @@
+<header class="site-header section-wrap">
+  <a class="brand" href="{{ "/" | relURL }}" aria-label="回到南港新鮮市首頁">
+    <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span><strong>{{ .Site.Data.site.brand.name }}</strong><small>{{ .Site.Data.site.brand.eyebrow }}</small></span>
+  </a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">選單 <span>＋</span></button>
+  <nav id="primary-nav" class="primary-nav" aria-label="主要選單">
+    {{ range .Site.Menus.main }}<a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>{{ end }}
+    <a class="nav-cta" href="{{ "contact/" | relURL }}">找我們聊聊 <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>

@@ -1,0 +1,6 @@
+{{ define "main" }}
+<section class="page-hero section-wrap"><p class="eyebrow">{{ .Section | upper }}</p><h1>{{ .Title }}</h1>{{ with .Description }}<p class="hero-lead">{{ . }}</p>{{ end }}</section>
+<section class="listing section-wrap">
+  {{ if .Pages }}<div class="listing-grid">{{ range .Pages.ByWeight.Reverse }}<a class="listing-card" href="{{ .RelPermalink }}"><span class="listing-index">{{ printf "%02d" .Weight }}</span><h2>{{ .Title }}</h2><p>{{ .Params.summary | default .Description }}</p><span class="read-more">查看內容 ↗</span></a>{{ end }}</div>{{ else }}<p class="empty-state">這個內容集合還沒有公開內容，請從 PagesCMS 新增第一筆資料。</p>{{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,232 @@
+media:
+  input: static/media
+  output: /media
+
+content:
+  - name: site-settings
+    label: Site settings
+    type: file
+    path: data/site.yaml
+    format: yaml
+    fields:
+      - name: brand
+        label: Brand
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            type: string
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: shortName
+            label: Short name
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - name: email
+            label: Email
+            type: string
+          - name: phone
+            label: Phone
+            type: string
+          - name: address
+            label: Address
+            type: string
+          - name: hours
+            label: Hours
+            type: string
+
+  - name: home
+    label: Homepage
+    type: file
+    path: data/home.yaml
+    format: yaml
+    fields:
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            type: string
+          - name: title
+            label: Title
+            type: text
+            required: true
+          - name: description
+            label: Description
+            type: text
+          - name: primaryCta
+            label: Primary CTA
+            type: string
+          - name: primaryUrl
+            label: Primary URL
+            type: string
+          - name: secondaryCta
+            label: Secondary CTA
+            type: string
+          - name: secondaryUrl
+            label: Secondary URL
+            type: string
+          - name: visualLabel
+            label: Visual label
+            type: string
+          - name: visualTitle
+            label: Visual title
+            type: string
+          - name: visualNote
+            label: Visual note
+            type: text
+          - name: visualTags
+            label: Visual tags
+            type: list
+            field:
+              type: string
+      - name: intro
+        label: Intro
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            type: string
+          - name: title
+            label: Title
+            type: text
+          - name: body
+            label: Body
+            type: text
+      - name: principles
+        label: Principles
+        type: list
+        fields:
+          - name: number
+            label: Number
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: cta
+        label: CTA
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+
+  - name: products
+    label: Products and services
+    type: collection
+    path: content/products
+    view:
+      primary: title
+      sort: weight
+      order: asc
+    fields:
+      - name: title
+        label: Name
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: text
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - fresh-picks
+            - local-stores
+            - daily-ideas
+      - name: featured
+        label: Featured
+        type: boolean
+      - name: image
+        label: Image
+        type: image
+      - name: body
+        label: Description
+        type: rich-text
+
+  - name: cases
+    label: Case studies
+    type: collection
+    path: content/cases
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: partner
+        label: Partner
+        type: string
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - community
+            - store
+            - collaboration
+      - name: published
+        label: Published
+        type: boolean
+      - name: cover
+        label: Cover
+        type: image
+      - name: body
+        label: Story
+        type: rich-text
+
+  - name: posts
+    label: News
+    type: collection
+    path: content/posts
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - announcement
+            - market-note
+            - event
+      - name: published
+        label: Published
+        type: boolean
+      - name: cover
+        label: Cover
+        type: image
+      - name: body
+        label: Content
+        type: rich-text
