@@ -7,13 +7,11 @@ hero:
   primaryUrl: /products/
   secondaryCta: 認識南港新鮮市
   secondaryUrl: /about/
-  visualLabel: 今日鮮選
+  image: /images/hero-market.jpg
+  imageAlt: 南港新鮮市的市場蔬果與日常採買情境
+  visualLabel: MARKET NOTES / 01
   visualTitle: 一籃，剛剛好的新鮮。
   visualNote: 依季節、產地與南港生活節奏，挑出今天值得帶回家的選擇。
-  visualTags:
-    - 當季
-    - 在地
-    - 少包裝
 
 intro:
   eyebrow: 我們相信

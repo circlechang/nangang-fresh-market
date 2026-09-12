@@ -4,7 +4,8 @@ summary: 依季節與日常需求整理的食材與好物，讓今天的採買�
 category: fresh-picks
 featured: true
 weight: 10
-draft: false
+image: /images/produce.jpg
+imageAlt: 一籃色彩豐富的新鮮蔬果
 ---
 
 這是「南港新鮮市」產品／服務集合的示意內容。正式上線前，請補上實際合作店家、品項、產地與供應時間。

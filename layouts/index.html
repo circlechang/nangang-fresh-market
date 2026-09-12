@@ -8,89 +8,62 @@
       <a class="button button-primary" href="{{ .Site.Data.home.hero.primaryUrl | relURL }}">{{ .Site.Data.home.hero.primaryCta }} <span aria-hidden="true">↗</span></a>
       <a class="button button-text" href="{{ .Site.Data.home.hero.secondaryUrl | relURL }}">{{ .Site.Data.home.hero.secondaryCta }} <span aria-hidden="true">→</span></a>
     </div>
+    <div class="hero-signature"><span class="signature-line"></span><span>南港 · 台北 · EVERYDAY FRESH</span></div>
   </div>
-  <div class="hero-visual" aria-label="{{ .Site.Data.home.hero.visualLabel }}">
-    <div class="visual-orbit visual-orbit-one"></div>
-    <div class="visual-orbit visual-orbit-two"></div>
-    <div class="visual-sticker">{{ .Site.Data.home.hero.visualLabel }}<br><strong>01</strong></div>
-    <div class="visual-basket">
-      <div class="basket-leaf leaf-one"></div>
-      <div class="basket-leaf leaf-two"></div>
-      <div class="basket-fruit fruit-orange"></div>
-      <div class="basket-fruit fruit-yellow"></div>
-      <div class="basket-fruit fruit-green"></div>
-      <div class="basket-paper"></div>
-    </div>
-    <div class="visual-caption">
-      <span>{{ .Site.Data.home.hero.visualTitle }}</span>
-      <small>{{ .Site.Data.home.hero.visualNote }}</small>
-    </div>
-    <div class="visual-tags">
-      {{ range .Site.Data.home.hero.visualTags }}<span>{{ . }}</span>{{ end }}
-    </div>
-  </div>
+  <figure class="hero-media">
+    <img src="{{ .Site.Data.home.hero.image | relURL }}" alt="{{ .Site.Data.home.hero.imageAlt }}">
+    <div class="hero-media-stamp"><span>{{ .Site.Data.home.hero.visualLabel }}</span><strong>01</strong></div>
+    <figcaption><span>{{ .Site.Data.home.hero.visualTitle }}</span><small>{{ .Site.Data.home.hero.visualNote }}</small></figcaption>
+  </figure>
 </section>
 
 <section class="signal-strip" aria-label="網站內容導覽">
   {{ range .Site.Data.home.signals }}
-  <div class="signal-item"><span>{{ .value }}</span><strong>{{ .label }}</strong></div>
+  <a class="signal-item" href="{{ if eq .label "今日鮮選" }}{{ "products/" | relURL }}{{ else }}{{ "#contact" | relURL }}{{ end }}"><span>{{ .value }}</span><strong>{{ .label }} <b aria-hidden="true">↗</b></strong></a>
   {{ end }}
   <div class="signal-note">在南港，<em>新鮮</em>是一種每天都能發生的選擇。</div>
 </section>
 
 <section class="intro section-wrap section-grid">
   <div class="section-kicker"><span class="section-index">01</span><span>{{ .Site.Data.home.intro.eyebrow }}</span></div>
-  <div class="intro-content">
-    <h2>{{ .Site.Data.home.intro.title }}</h2>
-    <p>{{ .Site.Data.home.intro.body }}</p>
-  </div>
+  <div class="intro-content"><h2>{{ .Site.Data.home.intro.title }}</h2><p>{{ .Site.Data.home.intro.body }}</p></div>
 </section>
 
 <section class="principles section-wrap">
-  <div class="principles-heading">
-    <p class="eyebrow">我們怎麼做</p>
-    <p class="muted-copy">把一個地方的好，整理成人人都能靠近的日常。</p>
-  </div>
+  <div class="principles-heading"><div><p class="eyebrow">我們怎麼做</p><h2>把一個地方的好，<br>整理成日常。</h2></div><p class="muted-copy">不是把市場搬到網路上，而是讓人更容易走進彼此的生活。</p></div>
   <div class="principle-list">
     {{ range .Site.Data.home.principles }}
-    <article class="principle-item">
-      <span class="principle-number">{{ .number }}</span>
-      <h3>{{ .title }}</h3>
-      <p>{{ .body }}</p>
-      <span class="principle-arrow" aria-hidden="true">↘</span>
-    </article>
+    <article class="principle-item"><span class="principle-number">{{ .number }}</span><h3>{{ .title }}</h3><p>{{ .body }}</p><span class="principle-arrow" aria-hidden="true">↘</span></article>
     {{ end }}
   </div>
 </section>
 
 <section class="catalog section-wrap" id="fresh-picks">
-  <div class="section-heading">
-    <div><p class="eyebrow">02 / 今日鮮選</p><h2>先從今天需要的開始。</h2></div>
-    <a class="button button-text" href="{{ "products/" | relURL }}">看全部選擇 <span aria-hidden="true">↗</span></a>
-  </div>
+  <div class="section-heading"><div><p class="eyebrow">02 / 今日鮮選</p><h2>先從今天需要的開始。</h2></div><a class="button button-text" href="{{ "products/" | relURL }}">看全部選擇 <span aria-hidden="true">↗</span></a></div>
   <div class="product-grid">
     {{ range where site.RegularPages "Section" "products" }}
     <a class="product-card" href="{{ .RelPermalink }}">
       <div class="product-card-top"><span>{{ printf "%02d" .Weight }}</span><span class="card-arrow">↗</span></div>
-      <div class="product-card-art art-{{ .Params.category }}"><span>{{ .Title }}</span></div>
-      <div class="product-card-copy"><h3>{{ .Title }}</h3><p>{{ .Params.summary }}</p><span class="read-more">查看提案</span></div>
+      <div class="product-card-art"><img src="{{ .Params.image | relURL }}" alt="{{ .Params.imageAlt }}"><span>{{ .Title }}</span></div>
+      <div class="product-card-copy"><h3>{{ .Title }}</h3><p>{{ .Params.summary }}</p><span class="read-more">查看提案 <b aria-hidden="true">→</b></span></div>
     </a>
     {{ end }}
   </div>
 </section>
 
+<section class="field-note section-wrap">
+  <div class="field-note-image"><img src="{{ "images/kitchen.jpg" | relURL }}" alt="新鮮食材從市場走進日常餐桌"></div>
+  <div class="field-note-copy"><p class="eyebrow">MARKET NOTE / 03</p><h2>好的採買，<br><em>會留下生活的味道。</em></h2><p>從市場帶回家的，不只是食材。它會變成一頓飯、一段分享，或是你開始認識這個地方的第一個理由。</p><a class="button button-dark" href="{{ "about/" | relURL }}">認識我們 <span aria-hidden="true">↗</span></a></div>
+</section>
+
 <section class="invite section-wrap">
-  <div class="invite-mark">NFM</div>
-  <div class="invite-copy"><p class="eyebrow">03 / 一起加入</p><h2>好東西，值得<br><em>被更多人知道。</em></h2></div>
-  <div class="invite-body"><p>店家、品牌、社區與每一位南港居民，都可以成為這座市場的一部分。</p><a class="button button-dark" href="{{ "contact/" | relURL }}">告訴我們你的想法 <span aria-hidden="true">↗</span></a></div>
+  <div class="invite-mark">NFM<br><small>FIELD GUIDE</small></div><div class="invite-copy"><p class="eyebrow">04 / 一起加入</p><h2>好東西，值得<br><em>被更多人知道。</em></h2></div><div class="invite-body"><p>店家、品牌、社區與每一位南港居民，都可以成為這座市場的一部分。</p><a class="button button-dark" href="{{ "contact/" | relURL }}">告訴我們你的想法 <span aria-hidden="true">↗</span></a></div>
 </section>
 
 <section class="contact-section section-wrap" id="contact">
-  <div class="section-heading contact-heading"><div><p class="eyebrow">04 / 聯絡我們</p><h2>{{ .Site.Data.home.cta.title }}</h2></div><p>{{ .Site.Data.home.cta.body }}</p></div>
+  <div class="section-heading contact-heading"><div><p class="eyebrow">05 / 聯絡我們</p><h2>{{ .Site.Data.home.cta.title }}</h2></div><p>{{ .Site.Data.home.cta.body }}</p></div>
   <form class="contact-form" action="{{ .Site.Params.formEndpoint | default "#" }}" method="post" data-contact-form>
-    <div class="form-row"><label>你的名字<input type="text" name="name" placeholder="怎麼稱呼你？" required></label><label>聯絡信箱<input type="email" name="email" placeholder="name@company.com" required></label></div>
-    <label>你想聊什麼？<textarea name="message" rows="4" placeholder="合作、推薦，或任何你想讓我們知道的事。" required></textarea></label>
-    <div class="form-submit"><button class="button button-primary" type="submit">送出訊息 <span aria-hidden="true">↗</span></button><p data-form-status role="status">表單 endpoint 尚未設定；目前為網站架構示意版。</p></div>
+    <div class="form-row"><label>你的名字<input type="text" name="name" placeholder="怎麼稱呼你？" required></label><label>聯絡信箱<input type="email" name="email" placeholder="name@company.com" required></label></div><label>你想聊什麼？<textarea name="message" rows="4" placeholder="合作、推薦，或任何你想讓我們知道的事。" required></textarea></label><div class="form-submit"><button class="button button-primary" type="submit">送出訊息 <span aria-hidden="true">↗</span></button><p data-form-status role="status">表單 endpoint 尚未設定；目前為網站架構示意版。</p></div>
   </form>
 </section>
 {{ end }}
