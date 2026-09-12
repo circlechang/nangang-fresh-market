@@ -4,7 +4,7 @@ summary: 依季節與日常需求整理的食材與好物，讓今天的採買�
 category: fresh-picks
 featured: true
 weight: 10
-image: /images/produce.jpg
+image: images/produce.jpg
 imageAlt: 一籃色彩豐富的新鮮蔬果
 ---
 

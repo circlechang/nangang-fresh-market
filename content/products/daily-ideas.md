@@ -4,7 +4,7 @@ summary: 從一餐、一個週末到一個社區活動，讓新鮮延伸成可�
 category: daily-ideas
 featured: true
 weight: 30
-image: /images/kitchen.jpg
+image: images/kitchen.jpg
 imageAlt: 將新鮮食材帶回家後準備成一餐
 ---
 

@@ -4,7 +4,7 @@ summary: 把值得走進去的店家整理成一張生活地圖，讓好生意�
 category: local-stores
 featured: true
 weight: 20
-image: /images/hero-market.jpg
+image: images/hero-market.jpg
 imageAlt: 市場裡排列整齊的當季蔬果
 ---
 
